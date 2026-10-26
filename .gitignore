@@ -1,0 +1,21 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Generated output and local vector database
+output/
+chroma_db/
+
+# Private data
+data/private/
+
+# OS files
+.DS_Store
+Thumbs.db

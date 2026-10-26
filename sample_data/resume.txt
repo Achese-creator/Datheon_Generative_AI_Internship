@@ -1,0 +1,13 @@
+﻿Name: Ada Example
+Email: ada@example.com
+Phone: +234 800 000 0000
+
+Skills: Python, SQL, data analysis
+
+Experience:
+Junior Data Analyst at Example Analytics, 2024-2025
+- Prepared reports for internal teams.
+- Cleaned and checked datasets.
+
+Education:
+BSc Computer Science, Example University, 2024

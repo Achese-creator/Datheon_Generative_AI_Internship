@@ -1,0 +1,24 @@
+﻿{
+  "full_name": "Ada Example",
+  "email": "ada@example.com",
+  "phone": "+234 800 000 0000",
+  "skills": ["Python", "SQL", "data analysis"],
+  "experience": [
+    {
+      "role": "Junior Data Analyst",
+      "company": "Example Analytics",
+      "duration": "2024-2025",
+      "achievements": [
+        "Prepared reports for internal teams",
+        "Cleaned and checked datasets"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "qualification": "BSc Computer Science",
+      "institution": "Example University",
+      "graduation_year": 2024
+    }
+  ]
+}
