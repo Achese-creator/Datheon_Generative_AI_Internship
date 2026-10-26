@@ -21,3 +21,5 @@ data/private/
 Thumbs.db
 
 task2_rag_assistant/storage/
+
+task4_streamlit_chatbot/storage/
