@@ -1,0 +1,11 @@
+﻿# Sample Document: Document Retrieval Basics
+
+Retrieval-augmented generation, commonly called RAG, combines information retrieval with language generation.
+
+A typical RAG pipeline has four stages: document loading, text chunking, embedding generation, and retrieval. A language model can then use the retrieved passages to answer a question.
+
+Document metadata helps identify where retrieved information originated. For PDF documents, storing the original page number allows an answer to cite a specific page.
+
+Chunk overlap preserves some context between adjacent chunks. However, excessively large chunks can introduce irrelevant text, while excessively small chunks can separate facts that belong together.
+
+A reliable document question-answering system should distinguish supported claims from missing evidence. If the available documents do not contain an answer, the system should say that the evidence is insufficient rather than inventing a response.

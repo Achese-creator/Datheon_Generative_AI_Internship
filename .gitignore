@@ -19,3 +19,5 @@ data/private/
 # OS files
 .DS_Store
 Thumbs.db
+
+task2_rag_assistant/storage/

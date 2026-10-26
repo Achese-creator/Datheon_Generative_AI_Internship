@@ -2,3 +2,7 @@
 python-dotenv
 pytest
 google-genai
+pypdf
+langchain-text-splitters
+chromadb
+fastembed
