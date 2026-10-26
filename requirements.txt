@@ -6,3 +6,5 @@ pypdf
 langchain-text-splitters
 chromadb
 fastembed
+
+streamlit

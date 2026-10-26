@@ -74,9 +74,41 @@ python -m task2_rag_assistant.cli --mode live --question "Why is chunk overlap u
 
 Demo mode uses a fixed sample response and does not verify answer relevance. Live mode calls the configured Gemini model. Scanned PDFs may require OCR.
 
-## Planned tasks
+## Task 4: Streamlit Conversational Chatbot
+
+A Streamlit chat interface that connects to the Task 2 RAG pipeline.
+
+### Features
+- Streamlit chat interface with conversation history
+- Session-state memory across chat interactions
+- Incremental response display
+- Demo mode that avoids LLM API calls
+- Optional Gemini streaming generation in live mode
+- Retrieved source labels displayed with answers
+- Automated tests for the Gemini streaming provider
+
+### Run the chatbot
+
+```powershell
+python -m streamlit run .\task4_streamlit_chatbot\app.py
+```
+
+Select **Demo (no API calls)** to test without an LLM request. The initial version indexes the included sample document.
+
+For live Gemini responses, configure `GEMINI_API_KEY` in your local `.env` file and select **Live Gemini** in the sidebar. Live requests may consume API quota or incur charges, depending on your provider terms.
+
+## Test suite
+
+Run all automated tests:
+
+```powershell
+python -m pytest -v
+```
+
+The tests use mocked LLM calls where appropriate, so the test suite does not need a live Gemini API request.
+
+## Remaining task
 - Task 3: Multi-tool AI agent
-- Task 4: Streamlit conversational interface
 
 ## Security
 Never commit `.env`, API keys, private documents, or other secrets.

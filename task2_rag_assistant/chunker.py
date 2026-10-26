@@ -5,8 +5,8 @@ from task2_rag_assistant.loader import DocumentPage
 
 def chunk_pages(
     pages: list[DocumentPage],
-    chunk_size: int = 800,
-    chunk_overlap: int = 120,
+    chunk_size: int = 400,
+    chunk_overlap: int = 60,
 ) -> list[dict]:
     """Split document pages into chunks while preserving citations."""
     if chunk_size <= 0:
