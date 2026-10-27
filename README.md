@@ -107,8 +107,66 @@ python -m pytest -v
 
 The tests use mocked LLM calls where appropriate, so the test suite does not need a live Gemini API request.
 
-## Remaining task
-- Task 3: Multi-tool AI agent
+## Task 3: Multi-Tool Autonomous AI Agent
+
+A console-based AI agent that uses Gemini function calling through LangChain to
+select tools, observe their results, and solve multi-step research questions.
+
+### Features
+- Autonomous tool selection using a Gemini chat model
+- DuckDuckGo web search with result titles, summaries, and URLs
+- Restricted Python math calculator supporting arithmetic and selected math functions
+- Local TXT and Markdown reader restricted to the Task 3 knowledge folder
+- Visible tool actions and observations in the console
+- Bounded tool execution to help control API usage
+- Automated tests for tools, tool selection flow, and iteration limits
+
+### Run the agent
+
+Configure `GEMINI_API_KEY` in your local `.env` file. The optional `GEMINI_MODEL`
+setting overrides the default model configured by the application.
+
+```powershell
+python -m task3_tool_agent.cli
+```
+
+Enter a question at the `You:` prompt. For example:
+
+```text
+Read agent_notes.md, search the web for the official LangChain documentation
+about tool-calling agents, and calculate 15% of 2400. Summarize the document,
+cite the web URLs, and report the calculation.
+```
+
+Enter the complete question on one line. Type `exit` to quit.
+
+### Available tools
+
+- `search_web(query)`: searches DuckDuckGo for external information.
+- `calculate(expression)`: evaluates permitted arithmetic expressions and selected
+  mathematical functions without executing arbitrary Python code.
+- `read_local_file(filename)`: reads `.txt` and `.md` files directly inside
+  `task3_tool_agent/knowledge/`. It rejects arbitrary paths and unsupported extensions.
+
+Place any additional non-sensitive knowledge documents in
+`task3_tool_agent/knowledge/` and refer to them by filename.
+
+The console displays tool actions and observations, followed by the final answer.
+It does not print private internal model reasoning. Web search requires internet
+access and may fail or time out. Gemini calls consume available API quota and
+may be subject to provider limits. The agent limits tool rounds to reduce
+unnecessary calls; this does not guarantee a fixed number of model requests.
+
+## Test suite
+
+Run all automated tests:
+
+```powershell
+python -m pytest -v
+```
+
+The tests use mocked LLM calls where appropriate, so the test suite does not need
+live Gemini API requests.
 
 ## Security
 Never commit `.env`, API keys, private documents, or other secrets.
